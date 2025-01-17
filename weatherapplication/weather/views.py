@@ -5,8 +5,8 @@ from django.views import View
 class WeatherView(View):
     def get(self, request):
         city = request.GET.get('city', 'India')
-        api_key = '6d1b899158d4149627e49d7003483c08 '
-        
+        api_key = '40269b9328c376abfb2648ee6ad60b63'
+        url = f'http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric'
         try:
             response = requests.get(url)
             response.raise_for_status()  # Raise an error for bad responses
